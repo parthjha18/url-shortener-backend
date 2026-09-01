@@ -43,5 +43,12 @@ services:
       redis:
         condition: service_healthy
 
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
 volumes:
   mysql_data:
